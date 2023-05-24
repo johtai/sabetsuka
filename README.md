@@ -1,2 +1,4 @@
 # sabetsuka
-Sabetsuka (差別化) makes it easy and painless to differentiate polynomials. The repository was inspired by the [Nokogiri](https://github.com/sparklemotion/nokogiri) gem 
+Sabetsuka (差別化) makes it easy and painless to differentiate polynomials.
+
+The repository was inspired by the [Nokogiri](https://github.com/sparklemotion/nokogiri) gem 
