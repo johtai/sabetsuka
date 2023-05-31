@@ -15,6 +15,6 @@ The polynomial format: `3x + 5y + 6`, `5x - 2`, `-3y^2 - 5`
 polynomial = Polynomial.new("3x^3 + 4x^2 + 5x + 4")
 derivative = polynomial.differentiate
 
-puts "Polynomial: #{polynomial.expression}"
-puts "Derivative: #{derivative.expression}"
+puts "Polynomial: #{polynomial.to_s}"
+puts "Derivative: #{derivative.to_s}"
 ```
