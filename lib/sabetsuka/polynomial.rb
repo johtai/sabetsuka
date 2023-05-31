@@ -2,8 +2,9 @@ module Sabetsuka
   class Polynomial
     attr_accessor :expression
 
-    def initialize(expression)
+    def initialize(expression, variable)
       @expression = expression
+      @var_to_diff = variable
     end
 
     def differentiate
@@ -14,18 +15,22 @@ module Sabetsuka
       terms.each do |term|
         sign, coefficient, variable, exponent = parse_term(term)
 
+        if variable != @var_to_diff
+          variable = 'none'
+        end
+
         # puts sign.to_s + coefficient.to_s + variable.to_s + '^' + exponent.to_s
 
         next unless exponent > 0 && variable != 'none'
 
         derivative_coefficient = sign * coefficient * exponent
         derivative_exponent = exponent - 1
-        derivative_terms << format_term(derivative_coefficient, derivative_exponent)
+        derivative_terms << format_term(derivative_coefficient, variable, derivative_exponent)
       end
 
       derivative_expression = derivative_terms.empty? ? "0" : derivative_terms.join(' + ')
       derivative_expression.sub! '+ -', '- '
-      Polynomial.new(derivative_expression)
+      Polynomial.new(derivative_expression, @var_to_diff)
     end
 
     def to_s
@@ -46,13 +51,19 @@ module Sabetsuka
       [sign, coefficient, variable, exponent]
     end
 
-    def format_term(coefficient, exponent)
+    def format_term(coefficient, variable, exponent)
       term = coefficient.to_s
       # puts 'before_format: ' + term
-      term += 'x' if exponent > 0
+      term += variable if exponent > 0
       term += "^#{exponent}" if exponent > 1
 
       term
     end
   end
 end
+
+polynomial = Sabetsuka::Polynomial.new("3y^3 + 4x^2 + 5y + 4", 'x')
+derivative = polynomial.differentiate
+
+puts "Polynomial: #{polynomial.expression}"
+puts "Derivative: #{derivative.expression}"
