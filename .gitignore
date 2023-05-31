@@ -2,3 +2,6 @@
 /*.gem
 /.idea
 /tests
+/.replit
+/.bundle
+/replit.nix
