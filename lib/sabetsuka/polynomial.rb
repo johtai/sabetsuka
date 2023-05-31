@@ -15,11 +15,7 @@ module Sabetsuka
       terms.each do |term|
         sign, coefficient, variable, exponent = parse_term(term)
 
-        if variable != @var_to_diff
-          variable = 'none'
-        end
-
-        # puts sign.to_s + coefficient.to_s + variable.to_s + '^' + exponent.to_s
+        variable = 'none' if variable != @var_to_diff
 
         next unless exponent > 0 && variable != 'none'
 
@@ -53,7 +49,6 @@ module Sabetsuka
 
     def format_term(coefficient, variable, exponent)
       term = coefficient.to_s
-      # puts 'before_format: ' + term
       term += variable if exponent > 0
       term += "^#{exponent}" if exponent > 1
 
@@ -61,9 +56,3 @@ module Sabetsuka
     end
   end
 end
-
-polynomial = Sabetsuka::Polynomial.new("3y^3 + 4x^2 + 5y + 4", 'x')
-derivative = polynomial.differentiate
-
-puts "Polynomial: #{polynomial.expression}"
-puts "Derivative: #{derivative.expression}"
