@@ -54,9 +54,3 @@ module Sabetsuka
     end
   end
 end
-
-polynomial = Sabetsuka::Polynomial.new("3x^3 + 4x^2 + 5x + 4", 'x')
-derivative = polynomial.differentiate
-
-puts "Polynomial: #{polynomial.to_s}"
-puts "Derivative: #{derivative.to_s}"
