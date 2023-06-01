@@ -3,6 +3,7 @@ module Sabetsuka
     attr_accessor :expression
 
     def initialize(expression, variable)
+      validate_expression(expression)
       @expression = expression
       @var_to_diff = variable
     end
@@ -34,6 +35,12 @@ module Sabetsuka
     end
 
     private
+
+    def validate_expression(expression)
+      raise ArgumentError, "Empty polynomial expression" if expression.empty?
+      #raise ArgumentError, "Invalid polynomial expression: #{expression}" unless expression.match?(/\A[-+]*\d*[a-zA-Z]*\^?\d*[-+]*\z/)
+    end
+
 
     def parse_term(term)
       term.strip!
