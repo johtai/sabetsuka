@@ -9,8 +9,10 @@ Gem::Specification.new do |spec|
   spec.description = 'Sabetsuka (差別化) makes it easy and painless to differentiate polynomials'
   spec.homepage    = 'https://github.com/johtai/sabetsuka'
   spec.license     = 'MIT'
+  spec.files       = Dir['README.md', 'LICENSE', 'lib/**/*.rb',
+                   'lib/*.rb', 'Gemfile', 'Rakefile',
+                   'sabetsuka.gemspec', 'main.rb']
 
-  # spec.files = Dir['README.md', 'LICENSE', 'lib/**/*.rb', 'Gemfile', 'sabetsuka.gemspec', 'main.rb']
   # spec.files = ["lib/main.rb"]
 
 end
