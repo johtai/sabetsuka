@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'sabetsuka'
+polynomial = Polynomial.new(ARGV[0], ARGV[1])
+puts polynomial.differentiate.to_s

@@ -1,4 +1,8 @@
+### v1.1.0 (31.05.2023)
+- added test files
+- added support for negative term
+- added support for different variables
+- fixed bugs with one term
 
-## v1.0.0 (18.05.2023)
-
-* Initial release
+### v1.0.0 (18.05.2023)
+- initial release
