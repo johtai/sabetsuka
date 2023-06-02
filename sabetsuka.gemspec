@@ -1,9 +1,8 @@
 #require File.expand_path('lib/sabetsuka/version', __dir__)
 
-
 Gem::Specification.new do |spec|
   spec.name        = 'sabetsuka'
-  spec.version     = '1.1.0'
+  spec.version     = Sabetsuka::VERSION
   spec.authors     = ['johtai', 'Tempire', 'ompus']
   spec.summary     = 'differentiate polynomials'
   spec.description = 'Sabetsuka (差別化) makes it easy and painless to differentiate polynomials'
@@ -11,8 +10,5 @@ Gem::Specification.new do |spec|
   spec.license     = 'MIT'
   spec.files       = Dir['README.md', 'LICENSE', 'lib/**/*.rb',
                    'lib/*.rb', 'Gemfile', 'Rakefile',
-                   'sabetsuka.gemspec', 'main.rb']
-
-  # spec.files = ["lib/main.rb"]
-
+                   'sabetsuka.gemspec', 'bin/*']
 end

@@ -2,10 +2,8 @@ require 'test/unit'
 require_relative '../lib/sabetsuka'
 
 class MyMethodTest < Test::Unit::TestCase
-
-
   def test_empty
-    assert_raises ArgumentError do
+    assert_raises Sabetsuka::EmptyArgumentError do
       Sabetsuka::Polynomial.new("", "x").differentiate.to_s
     end
   end

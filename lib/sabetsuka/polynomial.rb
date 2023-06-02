@@ -1,7 +1,10 @@
+require_relative 'exceptions'
+
 module Sabetsuka
   class Polynomial
     def initialize(expression, variable)
-      raise ArgumentError, "Empty polynomial expression or variable" if expression.empty? || variable.empty?
+      raise EmptyArgumentError if expression.empty? || variable.empty?
+      raise WrongTypeArgumentError unless expression.is_a?(String) && variable.is_a?(String)
 
       @expression = expression
       @variable_to_diff = variable
@@ -57,5 +60,4 @@ module Sabetsuka
   end
 end
 
-polynomial = Sabetsuka::Polynomial.new('4x + 2', 0)
-puts polynomial.differentiate.to_s
+# Sabetsuka::Polynomial.new("", "x").differentiate.to_s
