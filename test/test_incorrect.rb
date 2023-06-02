@@ -35,7 +35,5 @@ class MyMethodTest < Test::Unit::TestCase
   #def test_deg_without_num
   #assert_equal(ArgumentError, Sabetsuka::Polynomial.new("x^ + 56", "x").differentiate.to_s)
   #end
-
-
 end
 

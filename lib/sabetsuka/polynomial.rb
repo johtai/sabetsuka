@@ -59,5 +59,3 @@ module Sabetsuka
     end
   end
 end
-
-# Sabetsuka::Polynomial.new("", "x").differentiate.to_s
