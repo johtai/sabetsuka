@@ -5,6 +5,7 @@ module Sabetsuka
     def initialize(expression, variable)
       raise EmptyArgumentError if expression.empty? || variable.empty?
       raise WrongTypeArgumentError unless expression.is_a?(String) && variable.is_a?(String)
+      raise InvalidSyntaxError unless expression.match?(/\A(\s*[+-]?\s*\d+[a-zA-Z]*\s*(\^\d+)?)+\s*\z/)
 
       @expression = expression
       @variable_to_diff = variable

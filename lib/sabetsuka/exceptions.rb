@@ -12,4 +12,10 @@ module Sabetsuka
       super(message)
     end
   end
+
+  class InvalidSyntaxError < StandardError
+    def initialize(message = "Invalid expression syntax")
+      super(message)
+    end
+  end
 end
