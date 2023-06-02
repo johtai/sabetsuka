@@ -1,7 +1,8 @@
 module Sabetsuka
   class Polynomial
     def initialize(expression, variable)
-      validate_expression(expression)
+      raise ArgumentError, "Empty polynomial expression or variable" if expression.empty? || variable.empty?
+
       @expression = expression
       @variable_to_diff = variable
     end
@@ -34,12 +35,6 @@ module Sabetsuka
 
     private
 
-    def validate_expression(expression)
-      raise ArgumentError, "Empty polynomial expression" if expression.empty?
-      #raise ArgumentError, "Invalid polynomial expression: #{expression}" unless expression.match?(/\A[-+]*\d*[a-zA-Z]*\^?\d*[-+]*\z/)
-    end
-
-
     def parse_term(term)
       term.strip!
       matches = term.match(/(-)?([\d\-]*)([a-zA-Z]*)(\^(\d+))?/)
@@ -61,3 +56,6 @@ module Sabetsuka
     end
   end
 end
+
+polynomial = Sabetsuka::Polynomial.new('4x + 2', 0)
+puts polynomial.differentiate.to_s
