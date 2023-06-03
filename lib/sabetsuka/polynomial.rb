@@ -3,8 +3,8 @@ require_relative 'exceptions'
 module Sabetsuka
   class Polynomial
     def initialize(expression, variable)
-      raise EmptyArgumentError if expression.empty? || variable.empty?
       raise WrongTypeArgumentError unless expression.is_a?(String) && variable.is_a?(String)
+      raise EmptyArgumentError if expression.empty? || variable.empty?
       raise InvalidSyntaxError unless expression.match?(/\A(\s*[+-]?\s*\d+[a-zA-Z]*\s*(\^\d+)?)+\s*\z/)
 
       @expression = expression
