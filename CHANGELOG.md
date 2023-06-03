@@ -1,3 +1,6 @@
+### v1.3.1 (03.05.2023)
+- update summary
+
 ### v1.3.0 (03.05.2023)
 - update incorrect tests
 - update readme
