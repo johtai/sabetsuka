@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.name        = 'sabetsuka'
   spec.version     = Sabetsuka::VERSION
   spec.authors     = ['johtai', 'Tempire', 'ompus']
-  spec.summary     = 'differentiate polynomials'
+  spec.summary     = 'A gem for differentiating polynomials'
   spec.description = 'Sabetsuka (差別化) makes it easy and painless to differentiate polynomials'
   spec.homepage    = 'https://github.com/johtai/sabetsuka'
   spec.license     = 'MIT'
